@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="CarZZone.xsl"?>
+<CarZZone xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CarZZone.xsd">
+<Used_Cars Sl="01">
+    <Brand>Audi</Brand>
+    <Model>A8</Model>
+    <Type>Sedan</Type>
+    <Condition>Excellent</Condition>
+    <Registration>2013</Registration>
+    <Price>3,700,000</Price>
+    <Color>White</Color>
+    <Distance>38500</Distance>
+    <State>Haryana</State>
+</Used_Cars>
+<Used_Cars Sl="02">
+    <Brand>Mercedes Benz</Brand>
+    <Model>E22d Avantgrade</Model>
+    <Type>Sedan</Type>
+    <Condition>Excellent</Condition>
+    <Registration>2019</Registration>
+    <Price>4,975,000</Price>
+    <Color>White</Color>
+    <Distance>16000</Distance>
+    <State>Chandigarh</State>
+  </Used_Cars>
+  <Used_Cars Sl="03">
+    <Brand>Mahindra</Brand>
+    <Model>XUV500</Model>
+    <Type>SUV</Type>
+    <Condition>Excellent</Condition>
+    <Registration>2012</Registration>
+    <Price>500,000</Price>
+    <Color>Black</Color>
+    <Distance>136000</Distance>
+    <State>Haryana</State>
+  </Used_Cars>
+  <Used_Cars Sl="04">
+    <Brand>Volkswagon</Brand>
+    <Model>Vento Highline</Model>
+    <Type>Sedan</Type>
+    <Condition>Excellent</Condition>
+    <Registration>2011</Registration>
+    <Price>290,000</Price>
+    <Color>White</Color>
+    <Distance>68000</Distance>
+    <State>Haryana</State>
+  </Used_Cars>
+  <Used_Cars Sl="05">
+    <Brand>VOLVO</Brand>
+    <Model>XC60D5</Model>
+    <Type>Hatchback</Type>
+    <Condition>Excellent</Condition>
+    <Registration>2011</Registration>
+    <Price>1,150,000</Price>
+    <Color>Silver</Color>
+    <Distance>77000</Distance>
+    <State>Delhi</State>
+  </Used_Cars>
+  <Used_Cars Sl="06">
+    <Brand>TOYOTA</Brand>
+    <Model>Innova Z 2.5</Model>
+    <Type>MUV</Type>
+    <Condition>Excellent</Condition>
+    <Registration>2015</Registration>
+    <Price>1,150,000</Price>
+    <Color>Silver</Color>
+    <Distance>160000</Distance>
+    <State>Uttar Pradesh</State>
+  </Used_Cars>
+</CarZZone>

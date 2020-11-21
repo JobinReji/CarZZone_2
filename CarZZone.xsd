@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CarZZone" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="CarZZone" msdata:IsDataSet="true" msdata:Locale="en-US">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Used_Cars">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Brand" type="xs:string" minOccurs="0" />
+              <xs:element name="Model" type="xs:string" minOccurs="0" />
+              <xs:element name="Type" type="xs:string" minOccurs="0" />
+              <xs:element name="Condition" type="xs:string" minOccurs="0" />
+              <xs:element name="Registration" type="Year" minOccurs="0" />
+              <xs:element name="Price" type="xs:string" minOccurs="0" />
+              <xs:element name="Color" type="xs:string" minOccurs="0"/>
+              <xs:element name="Distance" type="xs:integer" minOccurs="0"/>
+              <xs:element name="State" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="Sl" type="xs:ID" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="Year">
+  <xs:restriction base="xs:integer">
+  <xs:maxExclusive value="2020"></xs:maxExclusive>
+  <xs:minExclusive value="2010"></xs:minExclusive>
+  </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
