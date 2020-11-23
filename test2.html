@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CarZZone-Specs</title>
+	<meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="img/cZZ.png" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS file -->
+    <style>
+      body{
+          background-color: lightblue !important;
+      }
+      h1{
+          color: maroon;
+      }
+      p{
+          color: red;
+      }
+  h1,p{
+    text-align:center;
+  }
+  #show{
+      border:1px solid black;
+      color: darkblue;
+      font-weight: bold;
+  }
+  table,th,td {
+      background-color: rgb(40, 39, 41);
+      color:white;
+    border : 2px solid black;
+     margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+  }
+  th,td {
+    padding: 10px;
+  }
+  </style>
+  	<link rel="stylesheet" type="text/css" href="css/styles.css">
+  	<!-- Bootstrap CSS only -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<!-- Bootstrap JS, Popper.js, and jQuery -->
+  	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  	<!-- Font Awesome icons (free version)-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+  <!-- Backgroun Animation -->
+  <div class="back">
+  <!-- Navigation Bar -->
+  <section id="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img src="img/img.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <header><h1>Online Car Showroom</h1></header>
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html?#">Home</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html?#Category">Category</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html?#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html?#contact">Contact</a>
+              </li>
+              <li class="nav-item">
+        				<a class="nav-link" id="spl" href="Login.HTML">Login</a>
+      				</li>
+          </ul>
+        </div>
+    </nav>
+  </section>
+<h1>Used Car Details</h1>
+<p>Click on the brand to get details of the car you want</p>
+<table id="demo"></table><br>
+<p id='show'></p>
+ <!-- footer -->
+ <section id="footer">
+  <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-left">Copyright &copy; My Website 2020</div>
+            <div class="social">     
+              <a href="https://www.facebook.com/"><i class="fa fa-facebook-square" id="fb" aria-hidden="true"></i></a>
+              <a href="https://www.youtube.com/"><i class="fa fa-youtube-play" id="yt" aria-hidden="true"></i></a>
+              <a href="https://www.twitter.com/"><i class="fa fa-twitter-square" id="tw" aria-hidden="true"></i></a>
+              <a href="https://plus.google.com/"><i class="fa fa-google-plus-square" id="gp" aria-hidden="true"></i></a>
+          </div>
+                    <div class="col-lg-4 text-lg-right">
+                        <a class="mr-3" href="#!">Privacy Policy</a>
+                        <a href="#!">Terms of Use</a>
+                    </div>
+                  <a type="button" class="btn btn-warning" href="#">Back to top</a>
+                </div>
+            </div>
+        </footer>
+      </section>
+</body>
+</html>
+<script>
+var x,xmlhttp,xmlDoc
+xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET", "CarZZone.xml", false);
+xmlhttp.send();
+xmlDoc = xmlhttp.responseXML;
+x = xmlDoc.getElementsByTagName("Used_Cars");
+table="<tr><th>BRAND</th><th>MODEL</th></tr>";
+for (i = 0; i <x.length; i++) {
+  table += "<tr onclick='showDetails(" + i + ")'><td>";
+  table += x[i].getElementsByTagName("Brand")[0].childNodes[0].nodeValue;
+  table += "</td><td>";
+  table +=  x[i].getElementsByTagName("Model")[0].childNodes[0].nodeValue;
+  table += "</td></tr>";
+}
+document.getElementById("demo").innerHTML = table;
+
+function showDetails(i) {
+  document.getElementById("show").innerHTML =
+  "BRAND: " +
+  x[i].getElementsByTagName("Brand")[0].childNodes[0].nodeValue +
+  "<br>MODEL: " +
+  x[i].getElementsByTagName("Model")[0].childNodes[0].nodeValue +
+  "<br>TYPE: " +
+  x[i].getElementsByTagName("Type")[0].childNodes[0].nodeValue +
+  "<br>CONDITION: " +
+  x[i].getElementsByTagName("Condition")[0].childNodes[0].nodeValue +
+  "<br>PRIZE: " +
+  x[i].getElementsByTagName("Price")[0].childNodes[0].nodeValue +
+  "<br>COLOUR: " +
+  x[i].getElementsByTagName("Color")[0].childNodes[0].nodeValue +
+  "<br>DISTANCE TRAVELED: " +
+  x[i].getElementsByTagName("Distance")[0].childNodes[0].nodeValue +
+  "<br>STATE: " +
+  x[i].getElementsByTagName("State")[0].childNodes[0].nodeValue;
+}
+    </script>
+
+</body>
+</html>
